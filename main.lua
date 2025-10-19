@@ -62,5 +62,26 @@ local PlayerTab = Window:CreateTab("Player", 4483362458) -- Title, Imag
 
 local Divider = PlayerTab:CreateDivider()
 
-
+local Slider = PlayerTab:CreateSlider({
+   Name = "Player Speed",
+   Range = {0, 200},
+   Increment = 1,
+   Suffix = "Speed",
+   CurrentValue = 17,
+   Flag = "Slider1", 
+   Callback = function(Value)
+         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+   end,
+})
+local Toggle = PlayerTab:CreateToggle({
+   Name = "Enable Player Speed",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value2)
+         if Value2 then
+           
+         elseif not Value2 then
+         
+   end,
+})
 
