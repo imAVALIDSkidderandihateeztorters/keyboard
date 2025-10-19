@@ -1,9 +1,9 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
-   Name = "Clicky Keyboard Tower Script - last updated 10/18/25",
+   Name = "Clicky Keyboard Tower Script - last updated 10/19/25",
    Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
-   LoadingTitle = "Clicky Keyboard Tower Script - last updated 10/18/25",
+   LoadingTitle = "Clicky Keyboard Tower Script - by viper",
    LoadingSubtitle = "by viper",
    ShowText = "Script", -- for mobile users to unhide rayfield, change if you'd like
    Theme = "DarkBlue", -- Check https://docs.sirius.menu/rayfield/configuration/themes
@@ -67,21 +67,34 @@ local Slider = PlayerTab:CreateSlider({
    Range = {0, 200},
    Increment = 1,
    Suffix = "Speed",
-   CurrentValue = 17,
+   CurrentValue = 16,
    Flag = "Slider1", 
-   Callback = function(Value)
-         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+   Callback = function(Value1)
+         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value1
    end,
 })
+
 local Toggle = PlayerTab:CreateToggle({
    Name = "Enable Player Speed",
    CurrentValue = false,
    Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value2)
-         if Value2 then
-           
-         elseif not Value2 then
-         
+   Callback = function(Value)
+         if Value then
+              game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value1
+         elseif not Value then
+              game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+        end    
    end,
 })
+
+local Divider = PlayerTab:CreateDivider()
+
+local Button = PlayerTab:CreateButton({
+   Name = "Fly",
+   Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+   end,
+})
+
+
 
