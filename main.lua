@@ -1,12 +1,12 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
-   Name = "Rayfield Example Window",
+   Name = "Clicky Keyboard Tower Script - last updated 10/18/25",
    Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
-   LoadingTitle = "Rayfield Interface Suite",
-   LoadingSubtitle = "by Sirius",
-   ShowText = "Rayfield", -- for mobile users to unhide rayfield, change if you'd like
-   Theme = "Default", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+   LoadingTitle = "Clicky Keyboard Tower Script - last updated 10/18/25",
+   LoadingSubtitle = "by viper",
+   ShowText = "Script", -- for mobile users to unhide rayfield, change if you'd like
+   Theme = "DarkBlue", -- Check https://docs.sirius.menu/rayfield/configuration/themes
 
    ToggleUIKeybind = "K", -- The keybind to toggle the UI visibility (string like "K" or Enum.KeyCode)
 
@@ -16,7 +16,7 @@ local Window = Rayfield:CreateWindow({
    ConfigurationSaving = {
       Enabled = true,
       FolderName = nil, -- Create a custom folder for your hub/game
-      FileName = "Big Hub"
+      FileName = "Cold Ware"
    },
 
    Discord = {
@@ -36,3 +36,31 @@ local Window = Rayfield:CreateWindow({
       Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
    }
 })
+
+local TpTab = Window:CreateTab("Teleport", 4483362458) -- Title, Image
+
+local Divider = TpTab:CreateDivider()
+
+local Button1 = TpTab:CreateButton({
+   Name = "TP Group Rewards",
+   Callback = function()
+         workspace["World Extras"]:FindFirstChild("GroupBarrier"):Destroy()
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-58, 6, 70)
+   end,
+})
+
+local Divider2 = TpTab:CreateDivider()
+
+local Button2 = TpTab:CreateButton({
+   Name = "TP End",
+   Callback = function()
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-65, 566, 253)
+   end,
+})
+
+local PlayerTab = Window:CreateTab("Player", 4483362458) -- Title, Imag
+
+local Divider = PlayerTab:CreateDivider()
+
+
+
