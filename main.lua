@@ -44,8 +44,8 @@ local Divider = TpTab:CreateDivider()
 local Button1 = TpTab:CreateButton({
    Name = "TP Group Rewards",
    Callback = function()
-         workspace["World Extras"]:FindFirstChild("GroupBarrier"):Destroy()
          game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-58, 6, 70)
+         workspace["World Extras"]:FindFirstChild("GroupBarrier"):Destroy()
    end,
 })
 
